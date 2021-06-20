@@ -101,8 +101,9 @@ namespace HW4
                 Console.WriteLine();
                 Console.WriteLine();
             }
-            Console.WriteLine();
 
+            Console.WriteLine("Task 4.3");
+            Console.Read();
 
             /* Task 4.3 */
 
