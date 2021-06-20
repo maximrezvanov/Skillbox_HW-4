@@ -6,7 +6,7 @@ namespace HW4
     {
         public static void Main(string[] args)
         {
-            
+
             double[] mouthts = new double[12];
             double[] income = new double[mouthts.Length];
             double[] consumption = new double[mouthts.Length];
@@ -25,9 +25,9 @@ namespace HW4
             InitialiseArr(income);
             InitialiseArr(consumption);
 
-           
 
-            double[][] table = {mouthts, income, consumption, profit};
+
+            double[][] table = { mouthts, income, consumption, profit };
             for (int i = 0; i < profit.Length; i++)
             {
                 profit[i] = income[i] - consumption[i];
@@ -40,14 +40,14 @@ namespace HW4
 
                 for (int j = 0; j < table[i].Length; j++)
                 {
-                
-                  Console.Write("{0:0.00 \t}", table[i][j]);
+
+                    Console.Write("{0:0.00 \t}", table[i][j]);
 
                 }
-                if (i == 0 ) Console.Write("Mounth num.");
-                if (i == 1 ) Console.Write("Income");
+                if (i == 0) Console.Write("Mounth num.");
+                if (i == 1) Console.Write("Income");
                 if (i == 2) Console.Write("Consumption");
-                if (i == 3 ) Console.Write("Profit");
+                if (i == 3) Console.Write("Profit");
 
                 sortedProfit = profit;
                 sortedMounts = mouthts;
@@ -61,12 +61,19 @@ namespace HW4
 
             for (int i = 0; i < 3; i++)
             {
-               if(sortedProfit[i] == sortedProfit[i + 1])
-               {
-                    ++mounthCounter;
-               }
                 Console.WriteLine(Math.Round(sortedProfit[i], 2) + " min profit " + " - " + sortedMounts[i] + " mounth");
             }
+            Console.WriteLine();
+            Console.WriteLine("Mounth with positiv profit");
+            for (int i = 0; i < sortedProfit.Length; i++)
+            {
+                if(sortedProfit[i] > 0)
+                {
+                    mounthCounter++;
+                    Console.WriteLine(Math.Round(sortedProfit[i], 2) + " pos. profit " + " - " + sortedMounts[i] + " mounth");
+                }
+            }
+            Console.WriteLine("Total pos.: " + mounthCounter);
 
             void InitialiseArr(double[] arr)
             {
@@ -129,7 +136,7 @@ namespace HW4
                 {
                     matrix1[i, j] *= 2;
 
-                    Console.Write($"{matrix1[i,j]}");
+                    Console.Write($"{matrix1[i, j]}");
                 }
                 Console.WriteLine();
             }
